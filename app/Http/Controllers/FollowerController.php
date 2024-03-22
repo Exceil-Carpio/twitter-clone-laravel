@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\DB;
 
 class FollowerController extends Controller
 {
+    // Needs to be updated to cater for all pages that uses it
     public function create(){
         $data = request()->validate([
             'user_id' => 'required',
