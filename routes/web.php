@@ -16,7 +16,10 @@ Route::middleware('auth')->group(function(){
     Route::post('/search', [ideaController::class, 'search'])->name('user.search');
     Route::post('/comments/create', [CommentsController::class, 'create']);
 
-    Route::get('/view-posts/{email}', [ideaController::class, 'getIdeas']);
+    Route::post('/logout', [authController::class, 'logout']);
+
+    Route::get('/view-posts/{id}', [ideaController::class, 'getIdeas']);
+
 });
 
 
@@ -24,4 +27,3 @@ Route::view('/register', 'register');
 Route::post('/register/account', [userController::class, 'create']);
 Route::view('/login', 'login')->name('login');
 Route::post('/login/account', [authController::class, 'login']);
-Route::post('/logout', [authController::class, 'logout']);

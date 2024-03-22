@@ -18,7 +18,7 @@ class idea extends Model
     ];
 
     public function comments(){
-        return $this->hasMany(comments::class)->orderBy('updated_at', 'DESC');
+        return $this->hasMany(comments::class);
     }
 
     public function user(){

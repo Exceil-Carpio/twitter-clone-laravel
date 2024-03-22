@@ -22,6 +22,7 @@
                 @if ($search ?? false)
                     <input type="hidden" id="search" name="search" value="{{$search}}">
                 @endif
+                <input type="hidden" name="owner_id" value="{{$idea->user['id']}}"/>
                 <input type="submit" class="btn btn-primary btn-sm" value="Post Comment"/>
             </div>
         </form>

@@ -16,25 +16,14 @@
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav">
-                    @auth
-                        <form action="/logout" method="POST">
-                            @csrf
-                            <li class="nav-item">
-                                <button type="submit" class="border-0 bg-transparent">
-                                    <a class="nav-link" aria-current="page">Logout</a>
-                                </button>
-                            </li>
-                        </form>
-                    @endauth
-                    @guest
+                    <form action="/logout" method="POST">
+                        @csrf
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="/login">Login</a>
+                            <button type="submit" class="border-0 bg-transparent">
+                                <a class="nav-link" aria-current="page">Logout</a>
+                            </button>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/register">Register</a>
-                        </li>
-                    @endguest
-
+                    </form>
                     <li class="nav-item">
                         <a class="nav-link" href="/profile">Profile</a>
                     </li>
