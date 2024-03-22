@@ -20,6 +20,7 @@ Route::middleware('auth')->group(function(){
 
     Route::get('/view-posts/{id}', [ideaController::class, 'getIdeas']);
 
+    Route::get('/profile', [userController::class, 'profile']);
 });
 
 

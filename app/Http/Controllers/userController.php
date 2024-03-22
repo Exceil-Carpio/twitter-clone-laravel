@@ -19,4 +19,8 @@ class userController extends Controller
 
         return redirect()->route('login');
     }
+
+    public function profile(){ //TODO: needs to be implemented
+        return view('profile');
+    }
 }
