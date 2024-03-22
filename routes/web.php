@@ -18,7 +18,7 @@ Route::middleware('auth')->group(function(){
 
     Route::post('/logout', [authController::class, 'logout']);
 
-    Route::get('/view-posts/{id}', [ideaController::class, 'getIdeas']);
+    Route::get('/view-posts/{mainUser}', [ideaController::class, 'getIdeas']);
 
     Route::get('/profile', [userController::class, 'profile']);
 });

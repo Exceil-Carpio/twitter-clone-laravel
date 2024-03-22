@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\idea;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -74,7 +75,8 @@ class ideaController extends Controller
     public function getIdeas(int $id){
         $ideas = idea::where('user_id', $id)->orderBy('created_at', 'DESC')->get();
         $users = DB::select('select id, name, username, email from users where id<>?', [Auth::id()]);
+        $owner = User::where('users.id', $id)->first();
 
-        return view('viewPosts', compact('ideas', 'users', 'id'));
+        return view('viewPosts', compact('ideas', 'users', 'id', 'owner'));
     }
 }
