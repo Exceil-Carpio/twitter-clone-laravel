@@ -13,7 +13,7 @@
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-{{-- Needs to be fixed. It must access a user from query not from relationship --}}
+
 <body>
     @include('layouts.navigation')
     <div class="container py-4">
@@ -40,12 +40,13 @@
                             </p>
                             <div class="d-flex justify-content-start">
                                 <a href="#" class="fw-light nav-link fs-6 me-3"> <span class="fas fa-user me-1">
-                                    </span> {{$owner['followers']}} </a>
+                                    </span> {{$owner->followers->count()}} </a>
                                 <a href="#" class="fw-light nav-link fs-6 me-3"> <span class="fas fa-brain me-1">
                                     </span> {{$ideas->count()}} </a>
                                 <a href="#" class="fw-light nav-link fs-6"> <span class="fas fa-comment me-1">
                                     </span> {{$owner->comments->count()}} </a>
                             </div>
+                            {{-- Logic needs to be coded --}}
                             <div class="mt-3">
                                 <button class="btn btn-primary btn-sm"> Follow </button>
                             </div>
